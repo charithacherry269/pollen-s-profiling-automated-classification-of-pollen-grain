@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)https://apsche.smartinternz.com/Student/guided_project_info/39542# -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Smartinternz </title>
+  <link rel="shortcut icon" type="image/x-icon" href="./index1_files/smartinternz.ico">
+
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="./index1_files/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="./index1_files/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="./index1_files/ionicons.min.css">
+  <!-- Theme style -->
+
+  <link rel="stylesheet" href="./index1_files/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="./index1_files/_all-skins.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="./index1_files/blue.css">
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="./index1_files/morris.css">
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="./index1_files/jquery-jvectormap-1.2.2.css">
+  <!-- Date Picker -->
+  <link rel="stylesheet" href="./index1_files/datepicker3.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="./index1_files/daterangepicker.css">
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="./index1_files/bootstrap3-wysihtml5.min.css">
+  <!-- jQuery 2.2.3 -->
+  <script src="./index1_files/jquery-2.2.3.min.js.download"></script>
+
+  <script>
+    var base_url = 'https://apsche.smartinternz.com/';
+  </script>
+  <style>
+    .nav-second-level>li>a {
+      color: #222d32;
+    }
+
+    .nav-second-level>li>a {
+      color: #222d32 !important;
+    }
+
+    .fa.pull-right {
+      margin-left: .3em;
+      margin-right: 10px !important;
+    }
+    .notification-drop{
+            font-style: normal; 
+            text-align: left; 
+            /* background-color: #ebebeb;  */
+            height: max-content; 
+            color: #000000 !important; 
+            font-weight: 500 !important; 
+            font-size: 13px;
+            height: max-content; 
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-bottom: 0.1px solid #e3e3e3;
+
+        }
+
+        .notification-drop > p {
+          border-bottom: 0.2px solid #e0dede;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+
+
+
+        .notification-drop > p:hover{
+            background-color: #f3f3f3;
+        }
+
+
+        .notify-dot{
+            position: absolute;
+            font-size: 8px;
+            width: 16px;
+            height: 16px;
+            top: 8px;
+            right: 6px;
+            line-height: 16px;
+            background: #e71818;
+            color: #fff;
+            text-align: center;
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            -ms-border-radius: 100%;
+            -o-border-radius: 100%;
+            border-radius: 100%;
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -ms-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+        }
+  </style>
+  <link rel="stylesheet" href="./index1_files/style.css">
+
+<style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style></head>
+
+<body class="skin-blue sidebar-mini">
+  <div class="wrapper">
+
+    <header class="main-header" id="main-header">
+        <!-- Logo -->
+     <a href="https://apsche.smartinternz.com/Student/guided_project_info/39542" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b><img src="./index1_files/smartinternz.ico" alt=""></b></span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b class="titles_heads"><img src="./index1_files/smartinternz.png" alt="" width="110px"></b></span>
+      </a>
+      <!-- Header Navbar: style can be found in header.less -->
+      <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="https://apsche.smartinternz.com/Student/guided_project_info/39542#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+  
+
+            <li class="dropdown user user-menu" onclick="readStudentNotificationStatus()">
+              <a href="https://apsche.smartinternz.com/Student/guided_project_info/39542#" class="dropdown-toggle" data-toggle="dropdown">
+              <span><i class="fa fa-bell" aria-hidden="true"></i></span>
+                <span class="notify-dot" id="studentCount">0</span>
+              </a>
+              <ul class="dropdown-menu" style="height: max-content; max-height: 350px; background-color: #ffffff; overflow-y: auto; border-radius: 10px; width: 300px !important;">
+              <div class="text-center" style="padding-top: 10px; padding-bottom: 10px; border-bottom: 1px solid #b9b9b9; margin-right: 15px; margin-left: 15px;">
+                <span style="font-weight: 700;">Notifications</span>
+              </div>
+                <li class="notification-drop">
+                                        <p>Welcome! we are glad to have you aboard.</p>
+                     
+
+                </li>
+
+                
+              </ul>
+            </li>
+
+
+            <li class="dropdown user user-menu">
+              <a href="https://apsche.smartinternz.com/Student/guided_project_info/39542#" class="dropdown-toggle" data-toggle="dropdown">
+                <span style="margin-right: 5px; margin-left: 5px;"> <i class="fa fa-cog"></i></span>
+              </a>
+              <ul class="dropdown-menu" style="height: max-content; max-height: 350px; background-color: #ffffff; overflow-y: auto; border-radius: 10px;  text-align: center !important; max-width: 163px;">
+                  <li><a class="dropdown-item" href="https://apsche.smartinternz.com/Student/Profile" style="border-top: 0.3px solid  #efefef; color: #3f4d67 !important">Profile</a></li>
+                  <li><a class="dropdown-item" href="https://apsche.smartinternz.com/Student/change_password" style="border-top: 0.3px solid  #efefef; color: #3f4d67 !important">Change Password</a></li>
+                  <li><a class="dropdown-item" href="https://apsche.smartinternz.com/Student/Logout" style="border-top: 0.5px solid  #efefef; color: #3f4d67 !important">
+                    <div class="fw-bold" style="font-weight: bold; margin-top: 5px;">  Sign Out </div>
+                  </a></li>
+              </ul>
+            </li>
+            <!-- Control Sidebar Toggle Button -->
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar" id="main-sidebar">
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar" style="height: auto;">
+
+        <ul class="sidebar-menu">
+          <li class="header"></li>
+          <!-- <li ><a href="https://apsche.smartinternz.com/Student/profile"><span class="nav-icons"><i class="fa fa-user"></i></span> <span>Profile</span></a></li> -->
+          <li><a href="https://apsche.smartinternz.com/Student/dashboard"><span class="nav-icons"><i class="fa fa-dashboard"></i></span> <span>Dashboard</span></a></li>
+
+          <li class="active"><a href="https://apsche.smartinternz.com/Student/externships"><span class="nav-icons"><i class="fa fa-send"></i></span> <span>Internship</span></a></li>
+          <!-- <li ><a href="https://apsche.smartinternz.com/Student/change_password"><span class="nav-icons"><i class="fa fa-key"></i></span> <span>Change Password</span></a></li> -->
+          <li><a href="https://apsche.smartinternz.com/Student/support"><span class="nav-icons"><i class="fa fa-question"></i></span> <span>Support</span></a></li>
+
+          <!-- <li ><a href="https://apsche.smartinternz.com/Student/orientation"><span class="nav-icons"><i class="fa fa-video-camera"></i></span> <span>Orientation Sessions</span></a></li> -->
+          <!-- <li ><a href="https://apsche.smartinternz.com/Student/training_calendar"><span class="nav-icons"><i class="fa fa-calendar"></i></span> <span>Training calendar</span></a></li>  -->
+                    <!-- <li ><a href="https://apsche.smartinternz.com/view-student-certificate"><span class="nav-icons"><i class="fa fa-certificate"></i></span> <span>Certificate</span></a></li> -->
+
+          <!-- <li ><a href="https://apsche.smartinternz.com/Student/assignments_quiz"><span class="nav-icons"><i class="fa fa-tasks"></i></span> <span>Assignment & Quiz</span></a></li>
+                <li ><a href="https://apsche.smartinternz.com/Student/mentoring_session"><span class="nav-icons"><i class="fa fa-calendar"></i></span> <span>Ask Me Anything Sessions</span></a></li> -->
+          
+
+        </ul>
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+    <style>
+
+    .btn-block{
+      background-color: #3F4D67 !important;
+      color: #ffffff !important;
+      font-weight: 700;
+    }
+
+    .btn-block:hover{
+      background-color: #2e3b52 !important;
+    }
+
+
+      @media only screen and (max-width: 500px) {
+        .table-container {
+          border-right-width: 1px;
+          bottom: 0;
+          display: block;
+          left: 0;
+          overflow-x: scroll;
+          overflow-y: auto;
+          padding: 0;
+          transition: all 0.2s ease 0s;
+          width: 250px;
+          z-index: 1000;
+        }
+      }
+
+      .pagination>li {
+        cursor: pointer;
+      }
+    </style>
+    <script>
+            function readStudentNotificationStatus() {
+                $.ajax({
+                    url: base_url + "Student_API/updateReadNotifications",
+                    data: '',
+                    type: 'POST',
+                    processData: false,
+                    contentType: false,
+                    success: function(data) {
+                        var data = $.parseJSON(data);
+                        if (data.success == 1) {
+                            getUnReadStudentNotificationCount();
+                        }
+                    }
+                })
+            }
+            function getUnReadStudentNotificationCount(){
+                $.ajax({
+                    url: base_url + "Student_API/getUnReadStudentNotificationsCount",
+                    data: '',
+                    type: 'POST',
+                    processData: false,
+                    contentType: false,
+                    success: function(data) {
+                        var data = $.parseJSON(data);
+                        if (data.success == 1) {
+                            // alert(data.count);
+                            $('#studentCount').html(data.count);
+                        }
+                    }
+                })
+            }
+        </script>
+    <link rel="stylesheet" href="./index1_files/dashboard_style.css"><link rel="stylesheet" href="./index1_files/certificate.css">
+<link rel="stylesheet" href="./index1_files/workspace.css">
+<link rel="stylesheet" href="./index1_files/dashboard_style(1).css">
+<!--
+<link rel="stylesheet" href="https://apsche.smartinternz.com/assets/badge_info_tabs/css/internship.css">
+-->
+
+<style>
+	.content_display {
+		padding-right: 20px;
+	}
+
+	.text_center {
+		text-align: center;
+		margin: 40px 0px;
+	}
+
+	.title_lass {
+		font-size: 36px;
+		font-weight: 500 !important;
+		color: #458dbc;
+	}
+
+	.text_center>p {
+		font-size: 15px;
+		font-weight: 500 !important;
+		margin-bottom: 30px;
+	}
+
+	.text_center>h4 {}
+
+	.btn-effet {
+		margin: 6px 6px;
+		font-size: 14px;
+		font-weight: 500 !important;
+	}
+
+	.alert-ss {
+		margin: 25px 6px;
+	}
+
+	.role_based {
+		color: white;
+		background-color: #6aa3d8;
+		padding: 15px;
+		font-size: 18px;
+		font-weight: 500;
+		border-radius: 30px;
+	}
+
+	.project_title {
+		margin-top: 75px;
+		font-size: 25px;
+		font-weight: 500 !important;
+		line-height: 37px;
+		margin-bottom: 26px;
+	}
+
+	.btn-pro {}
+
+	.zoom_badges {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 9999;
+		width: 100% !important;
+		overflow-y: scroll;
+		height: 600px;
+	}
+
+	.zooms {
+		position: absolute;
+		right: 30px;
+		top: 22px;
+	}
+
+	.fa-search-minus {
+		font-size: 21px;
+		background-color: #cccccc96;
+		padding: 6px;
+		border-radius: 5px;
+		cursor: pointer;
+		margin-right: 6px;
+	}
+
+	.fa-search-plus {
+		font-size: 21px;
+		background-color: #cccccc96;
+		padding: 6px;
+		border-radius: 5px;
+		cursor: pointer;
+		margin-right: 6px;
+	}
+
+	.tree_btn {
+		max-width: 190px;
+	}
+
+	.bdg-banner {
+		padding: 35px;
+	}
+
+	.bdg-banner h2 {
+		line-height: 45px;
+		font-size: 26px;
+		font-weight: 500 !important;
+		color: #ffff !important;
+	}
+
+	.bdg-banner h6 {
+		background: #f5f058;
+		color: #111217;
+	}
+
+	.bdg-banner {
+		background-image: url(https://apsche.smartinternz.com/assets/guided_projects/images/guided-inn-ban.jpg);
+	}
+
+	.sample_project_certificate {
+		border: 1px solid #181a1d;
+		width: 100%;
+	}
+
+	.btn-assemnt {
+		margin-top: 6px;
+	}
+
+	.btn-opacity {
+		opacity: 0.5;
+	}
+
+	.btn-dev {
+		font-weight: 500;
+	}
+
+	.dev_divs {
+		text-align: center;
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+
+	.dev_divs>p {
+		font-size: 15px;
+		font-weight: 500 !important;
+	}
+
+	.dev_divs>h3 {
+		padding-bottom: 2px;
+		font-size: 30px;
+		font-weight: 600 !important;
+		padding-top: 10px;
+	}
+
+	.dev_divs>a {
+		font-weight: 500;
+	}
+
+	.btn-dev_pop {
+		background-color: #3f4d67;
+		border: 1px solid #3f4d67;
+		font-weight: 500;
+		font-size: 20px;
+	}
+
+	.add_scroll {
+		height: 600px;
+		overflow-y: scroll;
+	}
+
+	.data_formates {
+		font-family: "Montserrat", sans-serif !important;
+		color: #020206c7 !important;
+		background-color: #e7e9ec;
+		padding: 40px;
+		/*font-size: 15px !important;
+   
+    font-weight: 500 !important;
+    text-align: justify;*/
+	}
+
+	.data_formates1 h3 {
+		font-size: 24px;
+		font-weight: 500 !important;
+		margin: 15px 0px;
+	}
+
+	.data_formates ul li {
+		color: #020206c7 !important;
+	}
+
+	.data_formates p {
+		font-family: "Montserrat", sans-serif !important;
+		color: #020206c7 !important;
+		text-align: left !important;
+	}
+
+	.data_formates span {
+		font-family: "Montserrat", sans-serif !important;
+		color: #020206c7 !important;
+		text-align: left !important;
+		font-size: 14px !important;
+	}
+
+	.data_formates img {
+		width: 100% !important;
+		border: 1px solid #6d6d9b08 !important;
+		margin: 10px 0px !important;
+		padding: 10px 20px;
+		box-shadow: 0 4px 21px 0px #00000099;
+		border-radius: 5px;
+	}
+
+	.shot_dis {
+		color: #fff !important;
+		margin-top: 0px !important;
+		line-height: 24px !important;
+	}
+
+	.star-ul li {
+		list-style: none !important;
+	}
+
+	.guided-inn h6 {
+		color: #ffffff;
+		font-size: 13px;
+		float: left;
+		padding-left: 5px;
+	}
+
+	.guided-inn li {
+		list-style: none !important;
+	}
+
+	.star-p {
+		color: #e2b22c !important;
+		font-weight: 600 !important;
+		font-size: 14px !important;
+		margin-top: 2px !important;
+	}
+
+	.star-li {
+		float: left;
+	}
+
+	.pr-1,
+	.px-1 {
+		padding-right: .25rem !important;
+	}
+
+	.star-span {
+		color: #fff;
+		padding-left: 5px;
+		font-weight: 500;
+		font-size: 13px;
+	}
+
+	.star-ul {
+		padding-left: 0px;
+	}
+
+	.half_star {
+		width: 18px;
+		margin-top: 2px;
+	}
+
+	.tech_stack {
+		font-weight: 600 !important;
+		font-size: 20px !important;
+		color: #ffff !important;
+	}
+
+	.pt-1,
+	.py-1 {
+		padding-top: .25rem !important;
+	}
+
+	.zoom_img {
+		width: 25px;
+		cursor: pointer
+	}
+
+	.outer_page {
+		box-shadow: var(--devsite-page-box-shadow, 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15));
+		background-color: #fff;
+		padding: 40px;
+		border-radius: var(--devsite-page-border-radius, 2px);
+		border: var(--devsite-page-border, 0);
+	}
+
+	.project_title_text {
+		color: #2d2828;
+		font-weight: 600 !important;
+	}
+
+	.milestone_text {
+		color: #2d2828;
+		font-weight: 600 !important;
+	}
+
+	.activity_title {
+		font-weight: 600 !important;
+		font-size: 25px;
+		color: #2d2828;
+	}
+
+	/*       Custome CSs                 */
+	.skill-bg span {
+		overflow: hidden;
+		background-color: #1070ac;
+		padding: 1px 15px;
+		color: #fff;
+		margin-right: 3px;
+		font-size: 15px;
+		font-weight: 500;
+		border-radius: 23px;
+		line-height: 2;
+		display: inline-flex;
+		margin-bottom: 5px;
+	}
+
+	.badge-con h5 {
+		color: #333;
+		font-size: 18px;
+		font-weight: 600 !important;
+		padding: 10px 0px 0px 0px;
+	}
+
+	.badge-info-btm h2 {
+		font-weight: 600 !important;
+		color: #333;
+		line-height: 1.4;
+		font-size: 24px;
+	}
+
+	.star-ul {
+		display: flex;
+	}
+
+	.guided-inn {
+		display: flex;
+	}
+
+	.badge-con p {
+		color: #333;
+		font-size: 15px;
+		line-height: 1.9;
+		font-weight: 500 !important;
+	}
+
+	.badge_benifits {
+		color: #333;
+		font-size: 15px;
+		line-height: 1.9;
+		font-weight: 500 !important;
+	}
+
+	.badge_benifits li {
+		font-weight: 500 !important;
+	}
+
+	.project_skills_text {
+		font-weight: 600 !important;
+		font-size: 14px;
+		color: #3a3a3d;
+		text-transform: capitalize;
+	}
+
+	.project_skills_div {
+		margin-bottom: 13px;
+	}
+
+	/*       Custome CSs                 */
+</style>
+<div class="content-wrapper" style="min-height: 723px;">
+
+	<section class="content">
+
+		<div class="box box-default table_box" id="zooms_divs">
+
+			<ul class="nav nav-tabs">
+				<!-- <li ><a data-toggle="tab" href="#home">Instructions</a></li> -->
+				<li class="active"><a data-toggle="tab" href="https://apsche.smartinternz.com/Student/guided_project_info/39542#menu1">Guided Project</a></li>
+								<li><a href="https://apsche.smartinternz.com/Student/guided_project_workspace/39542">Project Workspace</a></li>
+													<!-- <li><a href="https://apsche.smartinternz.com/student-chat-with-mentor/39542">Chat with Mentor </a></li> -->
+							</ul>
+
+			<div class="zooms">
+				<img src="./index1_files/shortscreen.png" class="zoom_img " id="shortscreen" title="Minimize  Screen" style="display: none;">
+				<img src="./index1_files/fullscreen.png" class="zoom_img " id="fullscreen" title="Maximize Screen">
+			</div>
+
+			<div class="tab-content">
+				<div id="home" class="tab-pane fade ">
+					<div class="bdg-banner">
+						<div class="container1">
+							<div class="row">
+								<div class="col-md-12 mt-4">
+									<div class="row">
+
+										<div class="col-md-9">
+											<h2>Pollen's Profiling: Automated Classification of Pollen Grains</h2>
+											<p class="shot_dis">Pollen's Profiling automates the classification of pollen grains, accelerating research and pollen-related diagnostics with accuracy and efficiency.</p>
+
+
+
+											<div class=" guided-inn">
+												<div>
+													<ul class="star-ul mt-2">
+														<li class="mr-1">
+															<h5 class="star-p">4.4</h5>
+														</li>
+														<li><img class="star-li pr-1" src="./index1_files/star-fill.png" alt="star-ratting">
+														</li>
+														<li><img class="star-li pr-1" src="./index1_files/star-fill.png" alt="star-ratting">
+														</li>
+														<li><img class="star-li pr-1" src="./index1_files/star-fill.png" alt="star-ratting">
+														</li>
+														<li><img class="star-li pr-1" src="./index1_files/star-fill.png" alt="star-ratting">
+														</li>
+														<li><img class="star-li pr-1" src="./index1_files/star-fill.png" alt="star-ratting">
+														</li>
+														<li><img class="star-li pr-1 half_star" src="./index1_files/half-star.png" alt="star-ratting">
+														</li>
+														<span class="star-span pr-1">( 100 )</span> &nbsp; &nbsp; &nbsp;<br>
+													</ul>
+												</div>
+												<div class="guided-inn">
+													<ul>
+														<li class=""><img class="star-li pt-1" src="./index1_files/guided-inn1.png" alt="guided-inn1">
+															<span class="star-span pr-1">60 Hrs</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+
+
+											<p class="tech_stack">Artificial Intelligence - Intermediate</p>
+
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="container1">
+						<div class="row">
+							<div class="col-md-8">
+								<div class="badge-info-btm">
+									<div style="border-left: 1px solid #e2e2e2; padding-left: 20px;" class="badge-con mt-6">
+										<h2 class="mt-5">How to Complete Project ?</h2>
+
+										<iframe width="100%" height="450px" src="./index1_files/Lrc3MAY0W6A.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+
+										<h5><img style="margin-left: -33px; position: absolute;" class="" src="./index1_files/list-ico.png" alt="list-ico">Step-1: Access Guided project to Complete the Project</h5>
+										<p>
+											Refer Guided Project steps and start working on the milestones &amp; activities with the necessary references provided and develop the project.
+										</p>
+										<h5><img style="margin-left: -33px; position: absolute;" class="" src="./index1_files/list-ico.png" alt="list-ico">Step-2: Update your project status in the workspace</h5>
+										<p>
+											Access Project workspace and update the status of your project using the kanban board available. Move interactive activity tiles for review once the activity is completed. Interact with your mentor directly by commenting on the activity tile.
+										</p>
+										<h5><img style="margin-left: -33px; position: absolute;" class="" src="./index1_files/list-ico.png" alt="list-ico">Step-3: Submit the Project &amp; Get project completion certificate.</h5>
+										<p>
+											Once all the activities of your project are completed, submit fully completed project files into Github through project workspace. The mentor reviews your work and issues certificate.
+
+										</p>
+										<h5>Instructions:</h5>
+										<div class="badge_benifits">
+											<ol>
+												<li>Explore the guided Project steps provided to complete the project activities</li>
+												<li>Join the mentor slack channel to interact with mentor (link will be mailed to you)</li>
+												<li>Update the project completion status regularly through Kanban board</li>
+												<li>Ensure that all project deliverables are uploaded to the GitHub repository for mentor review.</li>
+												<li>Project completion certificate will be awarded only if your submitted project files are correct and executable.</li>
+
+											</ol>
+
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 mt-5">
+								<div class="badge-cert">
+									<div class="badge-con">
+										<h5>Skills you Gain</h5>
+										<div class="skill-bg mt-2">
+																							<span>Python</span>
+																							<span>Python Web Frame works</span>
+																							<span>Data Preprocessing Techniques</span>
+																							<span>Flask integration</span>
+																							<span>Deep Learning</span>
+																							<span>Python-Flask</span>
+											
+										</div>
+
+										<p><a href="https://apsche.smartinternz.com/Student/badge_workspace/"></a></p>
+										<h5 class="mt-3">Sample Project Completion Certificate</h5><br>
+										<img class="sample_project_certificate" src="./index1_files/sb-certificate.png" alt="Project Certificate">
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+				</div>
+				<div id="menu3" class="tab-pane fade ">
+					<div class="row">
+						<div class="col-sm-3"> </div>
+						<div class="col-sm-6">
+							<div class="text_center" align="center">
+								<h3 class="project_title">Pollen's Profiling: Automated Classification of Pollen Grains</h3>
+								<a class="btn btn-success btn-lg btn-pro" href="https://apsche.smartinternz.com/Student/guided_project_workspace/39542">Go to Project Work Space</a>
+							</div>
+						</div>
+						<div class="col-sm-3"> </div>
+					</div>
+				</div>
+
+				<div id="menu1" class="tab-pane fade in active ">
+					<br><br>
+					<div class="row">
+						<div class="col-sm-4 add_scroll">
+							<div class="tree_views_polish">
+								<div id="tree_view_display"><div class="treeview-colorful w-20 border border-secondary mx-4 my-4"><ul class="treeview-colorful-list mb-3"><li class="treeview-colorful-items"><a class="treeview-colorful-items-header open"><i class="fa fa-minus-circle"></i> <button class="btn tree_btn tree_project" id="project_title_view" onclick="get_project_data(795)" style="font-weight: 500; opacity: 0.5;">Pollen's Profiling: Automated Classification of Pollen Grains</button></a><ul class="nested active" style="display: block;"><li class="treeview-colorful-items"><a class="treeview-colorful-items-header"> <button class="btn  tree_btn tree_mile_stone" onclick="get_mile_stone_data(6102,795)" style="font-weight: 500; opacity: 0.5;">Project Flow</button></a></li><li class="treeview-colorful-items"><a class="treeview-colorful-items-header"> <button class="btn  tree_btn tree_mile_stone" onclick="get_mile_stone_data(6103,795)" style="font-weight: 500; opacity: 0.5;">Prior Knowledge</button></a></li><li class="treeview-colorful-items"><a class="treeview-colorful-items-header"> <button class="btn  tree_btn tree_mile_stone" onclick="get_mile_stone_data(6104,795)" style="font-weight: 500; opacity: 0.5;">Project Objectives</button></a></li><li class="treeview-colorful-items"><a class="treeview-colorful-items-header"> <button class="btn  tree_btn tree_mile_stone" onclick="get_mile_stone_data(6105,795)" style="font-weight: 500; opacity: 0.5;">Project Structure</button></a></li><li class="treeview-colorful-items"><a class="treeview-colorful-items-header"><i class="fa fa-plus-circle"></i> <button class="btn  tree_btn tree_mile_stone" onclick="get_mile_stone_data(6106,795)" style="font-weight: 500; opacity: 0.5;">Data Collection </button></a><ul class="nested" style="display: none;"><a class="treeview-colorful-items-header"></a><li class="treeview-colorful-items"><a class="treeview-colorful-items-header"></a><a class="treeview-colorful-items-header"> <button class="btn  tree_btn tree_activities" onclick="get_activity_details(13192)" style="font-weight: 500; opacity: 0.5;">Collect the dataset </button></a></li></ul></li><li class="treeview-colorful-items"><a class="treeview-colorful-items-header"><i class="fa fa-plus-circle"></i> <button class="btn  tree_btn tree_mile_stone" onclick="get_mile_stone_data(6107,795)" style="font-weight: 500; opacity: 0.5;">Exploratory Data Analysis</button></a><ul class="nested" style="display: none;"><a class="treeview-colorful-items-header"></a><li class="treeview-colorful-items"><a class="treeview-colorful-items-header"></a><a class="treeview-colorful-items-header"> <button class="btn  tree_btn tree_activities" onclick="get_activity_details(13193)" style="font-weight: 500; opacity: 0.5;">Read the data  </button></a></li></ul></li><li class="treeview-colorful-items"><a class="treeview-colorful-items-header open"><i class="fa fa-minus-circle"></i> <button class="btn  tree_btn tree_mile_stone" onclick="get_mile_stone_data(6108,795)" style="font-weight: 500; opacity: 0.5;">Image Pre-processing</button></a><ul class="nested active" style="display: block;"><a class="treeview-colorful-items-header"></a><li class="treeview-colorful-items"><a class="treeview-colorful-items-header"></a><a class="treeview-colorful-items-header open"> <button class="btn  tree_btn tree_activities" onclick="get_activity_details(13194)" style="font-weight: 600; opacity: 1; box-shadow: rgba(29, 23, 23, 0.62) 1px 1px 7px;">Image Pre-processing </button></a></li></ul></li><li class="treeview-colorful-items"><a class="treeview-colorful-items-header open"><i class="fa fa-minus-circle"></i> <button class="btn  tree_btn tree_mile_stone" onclick="get_mile_stone_data(6109,795)" style="font-weight: 500; opacity: 0.5;">Model Building</button></a><ul class="nested active" style="display: block;"><a class="treeview-colorful-items-header"></a><li class="treeview-colorful-items"><a class="treeview-colorful-items-header"></a><a class="treeview-colorful-items-header"> <button class="btn  tree_btn tree_activities" onclick="get_activity_details(13195)" style="font-weight: 500; opacity: 0.5;">Training the model </button></a></li><li class="treeview-colorful-items"><a class="treeview-colorful-items-header"> <button class="btn  tree_btn tree_activities" onclick="get_activity_details(13196)" style="font-weight: 500; opacity: 0.5;">Save the model </button></a></li><li class="treeview-colorful-items"><a class="treeview-colorful-items-header open"> <button class="btn  tree_btn tree_activities" onclick="get_activity_details(13197)" style="font-weight: 500; opacity: 0.5;">Test the model </button></a></li></ul></li><li class="treeview-colorful-items"><a class="treeview-colorful-items-header open"><i class="fa fa-minus-circle"></i> <button class="btn  tree_btn tree_mile_stone" onclick="get_mile_stone_data(6110,795)" style="font-weight: 500; opacity: 0.5;">Application Building</button></a><ul class="nested active" style="display: block;"><a class="treeview-colorful-items-header"></a><li class="treeview-colorful-items"><a class="treeview-colorful-items-header"></a><a class="treeview-colorful-items-header open"> <button class="btn  tree_btn tree_activities" onclick="get_activity_details(13198)" style="font-weight: 500; opacity: 0.5;">Create HTML Pages </button></a></li></ul></li></ul></li></ul></div></div>
+
+							</div>
+						</div>
+						<div class="col-sm-8 add_scroll data_formates">
+							<div class="outer_page">
+								<div id="project_creation_form" style="display: none;">
+									<div class="project_complexity" style="display:none">
+										<span class="project_complexity_tag" id="complexity"> --</span>
+									</div>
+									<div class="project_title_div">
+										<h3 class="project_title_text" id="projectTitle">Pollen's Profiling: Automated Classification of Pollen Grains</h3>
+									</div>
+									<div class="project_skills_div" id="hdware">
+										<div class="project_skills_text" id="hdwareTitle"></div>
+										<div id="hdwarereq"></div>
+									</div>
+									<div class="project_skills_div" id="sdware">
+										<div class="project_skills_text" id="sdwareTitle"></div>
+										<div id="sdwarereq"></div>
+									</div>
+									<div class="project_skills_div" id="sysware">
+										<div class="project_skills_text" id="syswareTitle"></div>
+										<div id="syswarereq"></div>
+									</div>
+									<div class="project_category_div" style="display:none">
+										<p class="project_category_text">Category: <span id="category"> </span></p>
+									</div>
+
+									<div class="project_skills_div" style="display:none">
+										<p class="project_skills_text">Skills Required: <br><span id="skills"></span></p>
+									</div>
+
+									<div class="project_description_div">
+										<p class="project_desciption" style="display:none">Project Description:</p>
+										<div class="" id="project_description"><span style="color: rgb(13, 13, 13); font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; white-space-collapse: preserve; font-size: medium;">Pollen's Profiling: Automated Classification of Pollen Grains" is an innovative project aimed at automating the classification of pollen grains using advanced image processing and machine learning techniques. By leveraging deep learning algorithms and image analysis methods, this project seeks to develop a system capable of accurately identifying and categorizing pollen grains based on their morphological features.</span><div><span style="color: rgb(13, 13, 13); font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; white-space-collapse: preserve; font-size: medium;"><br></span><blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;"></blockquote><span style="font-size: medium;"><span style="color: rgb(13, 13, 13); font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; white-space-collapse: preserve;"><span style="font-weight: bold;">Scenario 1: </span>Environmental Monitoring<br></span><span style="color: rgb(13, 13, 13); font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; white-space-collapse: preserve;">Environmental scientists and researchers often collect pollen samples to study plant biodiversity, ecological patterns, and environmental changes. "Pollen's Profiling" enables automated analysis of pollen samples, facilitating rapid identification and classification of pollen grains based on their shape, size, and surface characteristics. This streamlines environmental monitoring efforts, providing valuable insights into pollen distribution, pollen seasonality, and ecosystem health.</span></span></div><div><span style="color: rgb(13, 13, 13); font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; white-space-collapse: preserve; font-size: medium;"><br></span><blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;"></blockquote><span style="font-size: medium;"><span style="color: rgb(13, 13, 13); font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; white-space-collapse: preserve;"><span style="font-weight: bold;">Scenario 2</span>: Allergy Diagnosis and Treatment<br></span><span style="color: rgb(13, 13, 13); font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; white-space-collapse: preserve;">Healthcare professionals and allergists frequently diagnose and manage pollen allergies, which affect millions of individuals worldwide. "Pollen's Profiling" assists in the automated identification of pollen types present in environmental samples or collected from patients, aiding in the diagnosis of pollen allergies. By accurately classifying pollen grains, the system helps allergists customize treatment plans, provide targeted allergen immunotherapy, and offer personalized advice to allergy sufferers.</span></span></div><div><span style="color: rgb(13, 13, 13); font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; white-space-collapse: preserve; font-size: medium;"><br></span><blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;"></blockquote><span style="font-size: medium;"><span style="color: rgb(13, 13, 13); font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; white-space-collapse: preserve;"><span style="font-weight: bold;">Scenario 3:</span> Agricultural Research and Crop Management<br></span><span style="color: rgb(13, 13, 13); font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; white-space-collapse: preserve;">Agricultural researchers and agronomists study pollen grains to understand plant reproduction, breeding patterns, and pollination dynamics. "Pollen's Profiling" facilitates automated analysis of pollen samples collected from crops, enabling researchers to classify pollen grains according to plant species or cultivars. This information helps optimize crop management practices, improve breeding strategies, and enhance agricultural productivity by ensuring effective pollination and seed production.</span></span></div><div><span style="color: rgb(13, 13, 13); font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; white-space-collapse: preserve; font-size: medium;"><br></span><blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;"></blockquote><span style="font-size: medium;"><span style="font-weight: bold;"><span style="font-family: &quot;Open Sans&quot;, sans-serif;">Technical Architect</span><span style="font-family: &quot;Open Sans&quot;, sans-serif;">ure:</span></span><br></span><blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;"><blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;"><span id="docs-internal-guid-aafd084a-7fff-875b-a514-5c34650f9558"><p dir="ltr" style="line-height:1.295;margin-top:0pt;margin-bottom:8pt;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; vertical-align: baseline; font-size: medium;"><br></span></p></span></blockquote><span id="docs-internal-guid-aafd084a-7fff-875b-a514-5c34650f9558"><p dir="ltr" style="line-height:1.295;margin-top:0pt;margin-bottom:8pt;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; vertical-align: baseline;"><span style="border: none; display: inline-block; overflow: hidden; width: 607px; height: 361px; font-size: medium;"><img src="./index1_files/unnamed.png" width="607" height="361" style="margin-left:0px;margin-top:0px;"></span></span></p></span></blockquote><span id="docs-internal-guid-aafd084a-7fff-875b-a514-5c34650f9558"><div><span style="font-size: 11pt; font-family: &quot;Times New Roman&quot;; color: rgb(0, 0, 0); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; vertical-align: baseline; white-space-collapse: preserve;"><span style="border:none;display:inline-block;overflow:hidden;width:607px;height:361px;"><br></span></span></div></span></div></div>
+									</div>
+
+								</div>
+								<div id="milestones_creation_form" style="display: none;">
+									<div class="milestone_div">
+										<h3 class="milestone_text" id="m_milestonetitle">Image Pre-processing</h3>
+										<div class="" id="m_description"><span style="font-size: medium;">Let's start&nbsp;Image Pre-processing with the help of given activities.</span></div>
+
+									</div>
+								</div>
+								<div id="activity_creation_form" style="display: block;">
+									<div class="activity_div">
+										<h3 class="activity_title" id="a_activity_title">Image Pre-processing</h3>
+										<p class="actvity_common_text" style="display:none">Duration: <span id="a_duration">2 </span> <span id="a_months_weeks_days" style="display:none"></span> </p>
+										<p class="actvity_common_text" style="display:none">Skill Tags: <span id="a_tags"></span></p>
+										<div class="" id="a_description"><span id="docs-internal-guid-6430f00a-7fff-b7a2-f82a-9213b60cdc63"><p dir="ltr" style="line-height:1.295;margin-top:0pt;margin-bottom:8pt;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; vertical-align: baseline;"><span style="border: none; display: inline-block; overflow: hidden; width: 583px; height: 91px; font-size: medium;"><img src="./index1_files/unnamed(1).png" width="583" height="91" style="margin-left:0px;margin-top:0px;"><br><br></span></span></p><p dir="ltr" style="line-height:1.295;margin-top:0pt;margin-bottom:8pt;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; vertical-align: baseline; font-size: medium;">The "process_img" function takes an image and a size as input, resizes the image to the specified size using OpenCV's "resize" function, normalizes the pixel values by dividing them by 255, and then returns the processed image. This function can be written in 2 lines as:<br><br></span></p><p dir="ltr" style="line-height:1.295;margin-top:0pt;margin-bottom:8pt;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; vertical-align: baseline;"><span style="border: none; display: inline-block; overflow: hidden; width: 602px; height: 141px; font-size: medium;"><img src="./index1_files/unnamed(2).png" width="602" height="141" style="margin-left:0px;margin-top:0px;"></span></span></p><p dir="ltr" style="line-height:1.295;margin-top:0pt;margin-bottom:8pt;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; vertical-align: baseline;"><span style="border: none; display: inline-block; overflow: hidden; width: 602px; height: 166px; font-size: medium;"><img src="./index1_files/unnamed(3).png" width="602" height="166" style="margin-left:0px;margin-top:0px;"><br><br></span></span></p><p dir="ltr" style="line-height:1.295;margin-top:0pt;margin-bottom:8pt;"><span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; vertical-align: baseline; font-size: medium;">The code above performs one-hot encoding on the labels using LabelEncoder and np_utils from sci-kit-learn and Keras, respectively. And uses the train_test_split function from sci-kit-learn to split the dataset into training and testing sets.</span></p><div><span style="font-size: 10pt; font-family: &quot;Times New Roman&quot;; color: rgb(0, 0, 0); background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; vertical-align: baseline; white-space-collapse: preserve;"><br></span></div></span></div>
+									</div>
+								</div>
+								<div id="refrence_creation_form" style="display:none">
+									<div class="row" style="display:none" id="preview_cards_div">
+										<div class="col-md-12">
+											<div class="preivew_cards" id="preivew_cards">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="menu2" class="tab-pane fade">
+					<h3>Assessments</h3>
+					<div class="alert alert-danger" id="notes_ass" style="display:none;font-weight: 500;">Note*: Assessment will be accessible on completion of Project </div>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Sno.</th>
+								<th>Assessment Title</th>
+								<th>Category</th>
+								<th>Status</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody id="show_data">
+						</tbody>
+					</table>
+
+					<div class="">
+						<ul class="pagination" id="pagination"></ul>
+					</div>
+
+
+
+
+
+				</div>
+
+			</div>
+		</div>
+
+	</section>
+</div>
+
+
+
+
+
+
+<script>
+	var base_url = "https://apsche.smartinternz.com/";
+</script>
+<script>
+	var guided_lab = "795";
+</script>
+<script>
+	var BadgeappID = "39542";
+</script>
+<script src="./index1_files/treeview.js.download"></script>
+<script src="./index1_files/guided_project_info.js.download"></script>
+<script>
+	$(function() {
+		$('#shortscreen').hide();
+
+		$('#shortscreen').click(function() {
+			$('#zooms_divs').attr('class', 'box box-default table_box ');
+			$('#fullscreen').show();
+			$('#shortscreen').hide();
+		})
+		$('#fullscreen').click(function() {
+			$('#zooms_divs').attr('class', 'box box-default table_box zoom_badges');
+			$('#fullscreen').hide();
+			$('#shortscreen').show();
+		})
+	})
+</script>
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg" style="position: fixed; height: auto;"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery UI 1.11.4 -->
+<script src="./index1_files/jquery-ui.min.js.download"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+<!-- Bootstrap 3.3.6 -->
+<script src="./index1_files/bootstrap.min.js.download"></script>
+<!-- Morris.js charts -->
+<script src="./index1_files/raphael-min.js.download"></script>
+<script src="./index1_files/morris.min.js.download"></script>
+<!-- Sparkline -->
+<script src="./index1_files/jquery.sparkline.min.js.download"></script>
+<!-- jvectormap -->
+<script src="./index1_files/jquery-jvectormap-1.2.2.min.js.download"></script>
+<script src="./index1_files/jquery-jvectormap-world-mill-en.js.download"></script>
+<!-- jQuery Knob Chart -->
+<script src="./index1_files/jquery.knob.js.download"></script>
+<!-- daterangepicker -->
+<script src="./index1_files/moment.min.js.download"></script>
+
+<script src="./index1_files/bootstrap3-wysihtml5.all.min.js.download"></script>
+<!-- Slimscroll -->
+<script src="./index1_files/jquery.slimscroll.min.js.download"></script>
+<!-- FastClick -->
+<script src="./index1_files/fastclick.js.download"></script>
+<!-- AdminLTE App -->
+<script src="./index1_files/app.min.js.download"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+
+<!-- AdminLTE for demo purposes -->
+<script src="./index1_files/demo.js.download"></script>
+
+
+</body></html>
