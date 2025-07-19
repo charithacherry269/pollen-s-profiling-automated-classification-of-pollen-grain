@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Smartinternz </title>
+  <link rel="shortcut icon" type="image/x-icon" href="https://smartinternz.com/assets/smartinternz.ico">
+
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="https://apsche.smartinternz.com/assets/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+
+  <link rel="stylesheet" href="https://apsche.smartinternz.com/assets/dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="https://apsche.smartinternz.com/assets/dist/css/skins/_all-skins.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="https://apsche.smartinternz.com/assets/plugins/iCheck/flat/blue.css">
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="https://apsche.smartinternz.com/assets/plugins/morris/morris.css">
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="https://apsche.smartinternz.com/assets/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+  <!-- Date Picker -->
+  <link rel="stylesheet" href="https://apsche.smartinternz.com/assets/plugins/datepicker/datepicker3.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="https://apsche.smartinternz.com/assets/plugins/daterangepicker/daterangepicker.css">
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="https://apsche.smartinternz.com/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <!-- jQuery 2.2.3 -->
+  <script src="https://apsche.smartinternz.com/assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
+
+  <script>
+    var base_url = 'https://apsche.smartinternz.com/';
+  </script>
+  <style>
+    .nav-second-level>li>a {
+      color: #222d32;
+    }
+
+    .nav-second-level>li>a {
+      color: #222d32 !important;
+    }
+
+    .fa.pull-right {
+      margin-left: .3em;
+      margin-right: 10px !important;
+    }
+    .notification-drop{
+            font-style: normal; 
+            text-align: left; 
+            /* background-color: #ebebeb;  */
+            height: max-content; 
+            color: #000000 !important; 
+            font-weight: 500 !important; 
+            font-size: 13px;
+            height: max-content; 
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-bottom: 0.1px solid #e3e3e3;
+
+        }
+
+        .notification-drop > p {
+          border-bottom: 0.2px solid #e0dede;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+
+
+
+        .notification-drop > p:hover{
+            background-color: #f3f3f3;
+        }
+
+
+        .notify-dot{
+            position: absolute;
+            font-size: 8px;
+            width: 16px;
+            height: 16px;
+            top: 8px;
+            right: 6px;
+            line-height: 16px;
+            background: #e71818;
+            color: #fff;
+            text-align: center;
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            -ms-border-radius: 100%;
+            -o-border-radius: 100%;
+            border-radius: 100%;
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -ms-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+        }
+  </style>
+  <link rel="stylesheet" href="https://apsche.smartinternz.com/assets/style.css">
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+  <div class="wrapper">
+
+    <header class="main-header" id="main-header">
+        <!-- Logo -->
+     <a href="" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b><img src="https://smartinternz.com/assets/smartinternz.ico" alt=""></b></span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b class="titles_heads"><img src="https://smartinternz.com/assets/logo/smartinternz.png" alt="" width="110px"></b></span>
+      </a>
+      <!-- Header Navbar: style can be found in header.less -->
+      <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+  
+
+            <li class="dropdown user user-menu" onclick="readStudentNotificationStatus()">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span><i class="fa fa-bell" aria-hidden="true"></i></span>
+                <span class="notify-dot" id="studentCount">0</span>
+              </a>
+              <ul class="dropdown-menu" style="height: max-content; max-height: 350px; background-color: #ffffff; overflow-y: auto; border-radius: 10px; width: 300px !important;">
+              <div class="text-center" style="padding-top: 10px; padding-bottom: 10px; border-bottom: 1px solid #b9b9b9; margin-right: 15px; margin-left: 15px;" >
+                <span style="font-weight: 700;" >Notifications</span>
+              </div>
+                <li class="notification-drop">
+                                        <p>Welcome! we are glad to have you aboard.</p>
+                     
+
+                </li>
+
+                
+              </ul>
+            </li>
+
+
+            <li class="dropdown user user-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span style="margin-right: 5px; margin-left: 5px;"> <i class="fa fa-cog"></i></span>
+              </a>
+              <ul class="dropdown-menu" style="height: max-content; max-height: 350px; background-color: #ffffff; overflow-y: auto; border-radius: 10px;  text-align: center !important; max-width: 163px;">
+                  <li><a class="dropdown-item" href="https://apsche.smartinternz.com/Student/Profile"style="border-top: 0.3px solid  #efefef; color: #3f4d67 !important">Profile</a></li>
+                  <li><a class="dropdown-item" href="https://apsche.smartinternz.com/Student/change_password"style="border-top: 0.3px solid  #efefef; color: #3f4d67 !important">Change Password</a></li>
+                  <li><a class="dropdown-item" href="https://apsche.smartinternz.com/Student/Logout" style="border-top: 0.5px solid  #efefef; color: #3f4d67 !important">
+                    <div class="fw-bold" style="font-weight: bold; margin-top: 5px;">  Sign Out </div>
+                  </a></li>
+              </ul>
+            </li>
+            <!-- Control Sidebar Toggle Button -->
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar" id="main-sidebar">
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+
+        <ul class="sidebar-menu">
+          <li class="header"></li>
+          <!-- <li ><a href="https://apsche.smartinternz.com/Student/profile"><span class="nav-icons"><i class="fa fa-user"></i></span> <span>Profile</span></a></li> -->
+          <li ><a href="https://apsche.smartinternz.com/Student/dashboard"><span class="nav-icons"><i class="fa fa-dashboard"></i></span> <span>Dashboard</span></a></li>
+
+          <li class='active'><a href="https://apsche.smartinternz.com/Student/externships"><span class="nav-icons"><i class="fa fa-send"></i></span> <span>Internship</span></a></li>
+          <!-- <li ><a href="https://apsche.smartinternz.com/Student/change_password"><span class="nav-icons"><i class="fa fa-key"></i></span> <span>Change Password</span></a></li> -->
+          <li ><a href="https://apsche.smartinternz.com/Student/support"><span class="nav-icons"><i class="fa fa-question"></i></span> <span>Support</span></a></li>
+
+          <!-- <li ><a href="https://apsche.smartinternz.com/Student/orientation"><span class="nav-icons"><i class="fa fa-video-camera"></i></span> <span>Orientation Sessions</span></a></li> -->
+          <!-- <li ><a href="https://apsche.smartinternz.com/Student/training_calendar"><span class="nav-icons"><i class="fa fa-calendar"></i></span> <span>Training calendar</span></a></li>  -->
+                    <!-- <li ><a href="https://apsche.smartinternz.com/view-student-certificate"><span class="nav-icons"><i class="fa fa-certificate"></i></span> <span>Certificate</span></a></li> -->
+
+          <!-- <li ><a href="https://apsche.smartinternz.com/Student/assignments_quiz"><span class="nav-icons"><i class="fa fa-tasks"></i></span> <span>Assignment & Quiz</span></a></li>
+                <li ><a href="https://apsche.smartinternz.com/Student/mentoring_session"><span class="nav-icons"><i class="fa fa-calendar"></i></span> <span>Ask Me Anything Sessions</span></a></li> -->
+          
+
+        </ul>
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+    <style>
+
+    .btn-block{
+      background-color: #3F4D67 !important;
+      color: #ffffff !important;
+      font-weight: 700;
+    }
+
+    .btn-block:hover{
+      background-color: #2e3b52 !important;
+    }
+
+
+      @media only screen and (max-width: 500px) {
+        .table-container {
+          border-right-width: 1px;
+          bottom: 0;
+          display: block;
+          left: 0;
+          overflow-x: scroll;
+          overflow-y: auto;
+          padding: 0;
+          transition: all 0.2s ease 0s;
+          width: 250px;
+          z-index: 1000;
+        }
+      }
+
+      .pagination>li {
+        cursor: pointer;
+      }
+    </style>
+    <script>
+            function readStudentNotificationStatus() {
+                $.ajax({
+                    url: base_url + "Student_API/updateReadNotifications",
+                    data: '',
+                    type: 'POST',
+                    processData: false,
+                    contentType: false,
+                    success: function(data) {
+                        var data = $.parseJSON(data);
+                        if (data.success == 1) {
+                            getUnReadStudentNotificationCount();
+                        }
+                    }
+                })
+            }
+            function getUnReadStudentNotificationCount(){
+                $.ajax({
+                    url: base_url + "Student_API/getUnReadStudentNotificationsCount",
+                    data: '',
+                    type: 'POST',
+                    processData: false,
+                    contentType: false,
+                    success: function(data) {
+                        var data = $.parseJSON(data);
+                        if (data.success == 1) {
+                            // alert(data.count);
+                            $('#studentCount').html(data.count);
+                        }
+                    }
+                })
+            }
+        </script>
+    <link rel="stylesheet" href="https://apsche.smartinternz.com/assets/dashboard_style.css"><link rel="stylesheet" href="https://apsche.smartinternz.com/assets/vps/css/custom/student/certificate.css">
+<link rel="stylesheet" href="https://apsche.smartinternz.com/assets/vps/css/custom/student/workspace.css">
+<link rel="stylesheet" href="https://apsche.smartinternz.com/assets/student/dashboard_style.css">
+<!--
+<link rel="stylesheet" href="https://apsche.smartinternz.com/assets/badge_info_tabs/css/internship.css">
+-->
+
+<style>
+	.content_display {
+		padding-right: 20px;
+	}
+
+	.text_center {
+		text-align: center;
+		margin: 40px 0px;
+	}
+
+	.title_lass {
+		font-size: 36px;
+		font-weight: 500 !important;
+		color: #458dbc;
+	}
+
+	.text_center>p {
+		font-size: 15px;
+		font-weight: 500 !important;
+		margin-bottom: 30px;
+	}
+
+	.text_center>h4 {}
+
+	.btn-effet {
+		margin: 6px 6px;
+		font-size: 14px;
+		font-weight: 500 !important;
+	}
+
+	.alert-ss {
+		margin: 25px 6px;
+	}
+
+	.role_based {
+		color: white;
+		background-color: #6aa3d8;
+		padding: 15px;
+		font-size: 18px;
+		font-weight: 500;
+		border-radius: 30px;
+	}
+
+	.project_title {
+		margin-top: 75px;
+		font-size: 25px;
+		font-weight: 500 !important;
+		line-height: 37px;
+		margin-bottom: 26px;
+	}
+
+	.btn-pro {}
+
+	.zoom_badges {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 9999;
+		width: 100% !important;
+		overflow-y: scroll;
+		height: 600px;
+	}
+
+	.zooms {
+		position: absolute;
+		right: 30px;
+		top: 22px;
+	}
+
+	.fa-search-minus {
+		font-size: 21px;
+		background-color: #cccccc96;
+		padding: 6px;
+		border-radius: 5px;
+		cursor: pointer;
+		margin-right: 6px;
+	}
+
+	.fa-search-plus {
+		font-size: 21px;
+		background-color: #cccccc96;
+		padding: 6px;
+		border-radius: 5px;
+		cursor: pointer;
+		margin-right: 6px;
+	}
+
+	.tree_btn {
+		max-width: 190px;
+	}
+
+	.bdg-banner {
+		padding: 35px;
+	}
+
+	.bdg-banner h2 {
+		line-height: 45px;
+		font-size: 26px;
+		font-weight: 500 !important;
+		color: #ffff !important;
+	}
+
+	.bdg-banner h6 {
+		background: #f5f058;
+		color: #111217;
+	}
+
+	.bdg-banner {
+		background-image: url(https://apsche.smartinternz.com/assets/guided_projects/images/guided-inn-ban.jpg);
+	}
+
+	.sample_project_certificate {
+		border: 1px solid #181a1d;
+		width: 100%;
+	}
+
+	.btn-assemnt {
+		margin-top: 6px;
+	}
+
+	.btn-opacity {
+		opacity: 0.5;
+	}
+
+	.btn-dev {
+		font-weight: 500;
+	}
+
+	.dev_divs {
+		text-align: center;
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+
+	.dev_divs>p {
+		font-size: 15px;
+		font-weight: 500 !important;
+	}
+
+	.dev_divs>h3 {
+		padding-bottom: 2px;
+		font-size: 30px;
+		font-weight: 600 !important;
+		padding-top: 10px;
+	}
+
+	.dev_divs>a {
+		font-weight: 500;
+	}
+
+	.btn-dev_pop {
+		background-color: #3f4d67;
+		border: 1px solid #3f4d67;
+		font-weight: 500;
+		font-size: 20px;
+	}
+
+	.add_scroll {
+		height: 600px;
+		overflow-y: scroll;
+	}
+
+	.data_formates {
+		font-family: "Montserrat", sans-serif !important;
+		color: #020206c7 !important;
+		background-color: #e7e9ec;
+		padding: 40px;
+		/*font-size: 15px !important;
+   
+    font-weight: 500 !important;
+    text-align: justify;*/
+	}
+
+	.data_formates1 h3 {
+		font-size: 24px;
+		font-weight: 500 !important;
+		margin: 15px 0px;
+	}
+
+	.data_formates ul li {
+		color: #020206c7 !important;
+	}
+
+	.data_formates p {
+		font-family: "Montserrat", sans-serif !important;
+		color: #020206c7 !important;
+		text-align: left !important;
+	}
+
+	.data_formates span {
+		font-family: "Montserrat", sans-serif !important;
+		color: #020206c7 !important;
+		text-align: left !important;
+		font-size: 14px !important;
+	}
+
+	.data_formates img {
+		width: 100% !important;
+		border: 1px solid #6d6d9b08 !important;
+		margin: 10px 0px !important;
+		padding: 10px 20px;
+		box-shadow: 0 4px 21px 0px #00000099;
+		border-radius: 5px;
+	}
+
+	.shot_dis {
+		color: #fff !important;
+		margin-top: 0px !important;
+		line-height: 24px !important;
+	}
+
+	.star-ul li {
+		list-style: none !important;
+	}
+
+	.guided-inn h6 {
+		color: #ffffff;
+		font-size: 13px;
+		float: left;
+		padding-left: 5px;
+	}
+
+	.guided-inn li {
+		list-style: none !important;
+	}
+
+	.star-p {
+		color: #e2b22c !important;
+		font-weight: 600 !important;
+		font-size: 14px !important;
+		margin-top: 2px !important;
+	}
+
+	.star-li {
+		float: left;
+	}
+
+	.pr-1,
+	.px-1 {
+		padding-right: .25rem !important;
+	}
+
+	.star-span {
+		color: #fff;
+		padding-left: 5px;
+		font-weight: 500;
+		font-size: 13px;
+	}
+
+	.star-ul {
+		padding-left: 0px;
+	}
+
+	.half_star {
+		width: 18px;
+		margin-top: 2px;
+	}
+
+	.tech_stack {
+		font-weight: 600 !important;
+		font-size: 20px !important;
+		color: #ffff !important;
+	}
+
+	.pt-1,
+	.py-1 {
+		padding-top: .25rem !important;
+	}
+
+	.zoom_img {
+		width: 25px;
+		cursor: pointer
+	}
+
+	.outer_page {
+		box-shadow: var(--devsite-page-box-shadow, 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15));
+		background-color: #fff;
+		padding: 40px;
+		border-radius: var(--devsite-page-border-radius, 2px);
+		border: var(--devsite-page-border, 0);
+	}
+
+	.project_title_text {
+		color: #2d2828;
+		font-weight: 600 !important;
+	}
+
+	.milestone_text {
+		color: #2d2828;
+		font-weight: 600 !important;
+	}
+
+	.activity_title {
+		font-weight: 600 !important;
+		font-size: 25px;
+		color: #2d2828;
+	}
+
+	/*       Custome CSs                 */
+	.skill-bg span {
+		overflow: hidden;
+		background-color: #1070ac;
+		padding: 1px 15px;
+		color: #fff;
+		margin-right: 3px;
+		font-size: 15px;
+		font-weight: 500;
+		border-radius: 23px;
+		line-height: 2;
+		display: inline-flex;
+		margin-bottom: 5px;
+	}
+
+	.badge-con h5 {
+		color: #333;
+		font-size: 18px;
+		font-weight: 600 !important;
+		padding: 10px 0px 0px 0px;
+	}
+
+	.badge-info-btm h2 {
+		font-weight: 600 !important;
+		color: #333;
+		line-height: 1.4;
+		font-size: 24px;
+	}
+
+	.star-ul {
+		display: flex;
+	}
+
+	.guided-inn {
+		display: flex;
+	}
+
+	.badge-con p {
+		color: #333;
+		font-size: 15px;
+		line-height: 1.9;
+		font-weight: 500 !important;
+	}
+
+	.badge_benifits {
+		color: #333;
+		font-size: 15px;
+		line-height: 1.9;
+		font-weight: 500 !important;
+	}
+
+	.badge_benifits li {
+		font-weight: 500 !important;
+	}
+
+	.project_skills_text {
+		font-weight: 600 !important;
+		font-size: 14px;
+		color: #3a3a3d;
+		text-transform: capitalize;
+	}
+
+	.project_skills_div {
+		margin-bottom: 13px;
+	}
+
+	/*       Custome CSs                 */
+</style>
+<div class="content-wrapper">
+
+	<section class="content">
+
+		<div class="box box-default table_box" id="zooms_divs">
+
+			<ul class="nav nav-tabs">
+				<!-- <li ><a data-toggle="tab" href="#home">Instructions</a></li> -->
+				<li class="active"><a data-toggle="tab" href="#menu1">Guided Project</a></li>
+								<li><a href="https://apsche.smartinternz.com/Student/guided_project_workspace/39542">Project Workspace</a></li>
+													<!-- <li><a href="https://apsche.smartinternz.com/student-chat-with-mentor/39542">Chat with Mentor </a></li> -->
+							</ul>
+
+			<div class="zooms">
+				<img src="https://apsche.smartinternz.com/assets/shortscreen.png" class="zoom_img " id="shortscreen" title="Minimize  Screen">
+				<img src="https://apsche.smartinternz.com/assets/fullscreen.png" class="zoom_img " id="fullscreen" title="Maximize Screen">
+			</div>
+
+			<div class="tab-content">
+				<div id="home" class="tab-pane fade ">
+					<div class="bdg-banner">
+						<div class="container1">
+							<div class="row">
+								<div class="col-md-12 mt-4">
+									<div class="row">
+
+										<div class="col-md-9">
+											<h2>Pollen's Profiling: Automated Classification of Pollen Grains</h2>
+											<p class="shot_dis">Pollen's Profiling automates the classification of pollen grains, accelerating research and pollen-related diagnostics with accuracy and efficiency.</p>
+
+
+
+											<div class=" guided-inn">
+												<div>
+													<ul class="star-ul mt-2">
+														<li class="mr-1">
+															<h5 class="star-p">4.8</h5>
+														</li>
+														<li><img class="star-li pr-1" src="https://apsche.smartinternz.com/assets/guided_projects/images/star-fill.png" alt="star-ratting">
+														</li>
+														<li><img class="star-li pr-1" src="https://apsche.smartinternz.com/assets/guided_projects/images/star-fill.png" alt="star-ratting">
+														</li>
+														<li><img class="star-li pr-1" src="https://apsche.smartinternz.com/assets/guided_projects/images/star-fill.png" alt="star-ratting">
+														</li>
+														<li><img class="star-li pr-1" src="https://apsche.smartinternz.com/assets/guided_projects/images/star-fill.png" alt="star-ratting">
+														</li>
+														<li><img class="star-li pr-1" src="https://apsche.smartinternz.com/assets/guided_projects/images/star-fill.png" alt="star-ratting">
+														</li>
+														<li><img class="star-li pr-1 half_star" src="https://apsche.smartinternz.com/assets/guided_projects/images/half-star.png" alt="star-ratting">
+														</li>
+														<span class="star-span pr-1">( 79 )</span> &nbsp; &nbsp; &nbsp;<br>
+													</ul>
+												</div>
+												<div class="guided-inn">
+													<ul>
+														<li class=""><img class="star-li pt-1" src="https://apsche.smartinternz.com/assets/guided_projects/images/guided-inn1.png" alt="guided-inn1">
+															<span class="star-span pr-1">60 Hrs</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+
+
+											<p class="tech_stack">Artificial Intelligence - Intermediate</p>
+
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="container1">
+						<div class="row">
+							<div class="col-md-8">
+								<div class="badge-info-btm">
+									<div style="border-left: 1px solid #e2e2e2; padding-left: 20px;" class="badge-con mt-6">
+										<h2 class="mt-5">How to Complete Project ?</h2>
+
+										<iframe width="100%" height="450px" src="https://www.youtube.com/embed/Lrc3MAY0W6A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+										<h5><img style="margin-left: -33px; position: absolute;" class="" src="https://apsche.smartinternz.com/assets/badge_info_tabs/images/list-ico.png" alt="list-ico">Step-1: Access Guided project to Complete the Project</h5>
+										<p>
+											Refer Guided Project steps and start working on the milestones & activities with the necessary references provided and develop the project.
+										</p>
+										<h5><img style="margin-left: -33px; position: absolute;" class="" src="https://apsche.smartinternz.com/assets/badge_info_tabs/images/list-ico.png" alt="list-ico">Step-2: Update your project status in the workspace</h5>
+										<p>
+											Access Project workspace and update the status of your project using the kanban board available. Move interactive activity tiles for review once the activity is completed. Interact with your mentor directly by commenting on the activity tile.
+										</p>
+										<h5><img style="margin-left: -33px; position: absolute;" class="" src="https://apsche.smartinternz.com/assets/badge_info_tabs/images/list-ico.png" alt="list-ico">Step-3: Submit the Project & Get project completion certificate.</h5>
+										<p>
+											Once all the activities of your project are completed, submit fully completed project files into Github through project workspace. The mentor reviews your work and issues certificate.
+
+										</p>
+										<h5>Instructions:</h5>
+										<div class="badge_benifits">
+											<ol>
+												<li>Explore the guided Project steps provided to complete the project activities</li>
+												<li>Join the mentor slack channel to interact with mentor (link will be mailed to you)</li>
+												<li>Update the project completion status regularly through Kanban board</li>
+												<li>Ensure that all project deliverables are uploaded to the GitHub repository for mentor review.</li>
+												<li>Project completion certificate will be awarded only if your submitted project files are correct and executable.</li>
+
+											</ol>
+
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 mt-5">
+								<div class="badge-cert">
+									<div class="badge-con">
+										<h5>Skills you Gain</h5>
+										<div class="skill-bg mt-2">
+																							<span>Python</span>
+																							<span>Python Web Frame works</span>
+																							<span>Data Preprocessing Techniques</span>
+																							<span>Flask integration</span>
+																							<span>Deep Learning</span>
+																							<span>Python-Flask</span>
+											
+										</div>
+
+										<p><a href="https://apsche.smartinternz.com/Student/badge_workspace/"></a></p>
+										<h5 class="mt-3">Sample Project Completion Certificate</h5><br>
+										<img class="sample_project_certificate" src="https://apsche.smartinternz.com/assets/guided_projects/new/images/sb-certificate.png" alt="Project Certificate">
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+				</div>
+				<div id="menu3" class="tab-pane fade ">
+					<div class="row">
+						<div class="col-sm-3"> </div>
+						<div class="col-sm-6">
+							<div class="text_center" align="center">
+								<h3 class="project_title">Pollen's Profiling: Automated Classification of Pollen Grains</h3>
+								<a class="btn btn-success btn-lg btn-pro" href="https://apsche.smartinternz.com/Student/guided_project_workspace/39542">Go to Project Work Space</a>
+							</div>
+						</div>
+						<div class="col-sm-3"> </div>
+					</div>
+				</div>
+
+				<div id="menu1" class="tab-pane fade in active ">
+					<br></br>
+					<div class="row">
+						<div class="col-sm-4 add_scroll">
+							<div class="tree_views_polish">
+								<div id="tree_view_display">
+									<div class="treeview-colorful w-20 border border-secondary mx-4 my-4">
+										<ul class="treeview-colorful-list mb-3">
+											<li class="treeview-colorful-items">
+											</li>
+										</ul>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="col-sm-8 add_scroll data_formates">
+							<div class="outer_page">
+								<div id="project_creation_form" style="display:none">
+									<div class="project_complexity" style="display:none">
+										<span class="project_complexity_tag" id="complexity"> --</span>
+									</div>
+									<div class="project_title_div">
+										<h3 class="project_title_text" id="projectTitle"></h3>
+									</div>
+									<div class="project_skills_div" id="hdware">
+										<div class="project_skills_text" id="hdwareTitle"></div>
+										<div id="hdwarereq"></div>
+									</div>
+									<div class="project_skills_div" id="sdware">
+										<div class="project_skills_text" id="sdwareTitle"></div>
+										<div id="sdwarereq"></div>
+									</div>
+									<div class="project_skills_div" id="sysware">
+										<div class="project_skills_text" id="syswareTitle"></div>
+										<div id="syswarereq"></div>
+									</div>
+									<div class="project_category_div" style="display:none">
+										<p class="project_category_text">Category: <span id="category"> </span></p>
+									</div>
+
+									<div class="project_skills_div" style="display:none">
+										<p class="project_skills_text">Skills Required: <br><span id="skills"></span></p>
+									</div>
+
+									<div class="project_description_div">
+										<p class="project_desciption" style="display:none">Project Description:</p>
+										<div class="" id="project_description">
+										</div>
+									</div>
+
+								</div>
+								<div id="milestones_creation_form" style="display:none">
+									<div class="milestone_div">
+										<h3 class="milestone_text" id="m_milestonetitle"></h3>
+										<div class="" id="m_description">
+											<p class="project_description_text"></p>
+
+										</div>
+
+									</div>
+								</div>
+								<div id="activity_creation_form" style="display:none">
+									<div class="activity_div">
+										<h3 class="activity_title" id="a_activity_title"></h3>
+										<p class="actvity_common_text" style="display:none">Duration: <span id="a_duration">2 </span> <span id="a_months_weeks_days" style="display:none"></span> </p>
+										<p class="actvity_common_text" style="display:none">Skill Tags: <span id="a_tags"></span></p>
+										<div class="" id="a_description">
+										</div>
+									</div>
+								</div>
+								<div id="refrence_creation_form" style="display:none">
+									<div class="row" style="display:none" id="preview_cards_div">
+										<div class="col-md-12">
+											<div class="preivew_cards" id="preivew_cards">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="menu2" class="tab-pane fade">
+					<h3>Assessments</h3>
+					<div class="alert alert-danger" id="notes_ass" style="display:none;font-weight: 500;">Note*: Assessment will be accessible on completion of Project </div>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Sno.</th>
+								<th>Assessment Title</th>
+								<th>Category</th>
+								<th>Status</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody id="show_data">
+						</tbody>
+					</table>
+
+					<div class="">
+						<ul class="pagination" id="pagination"></ul>
+					</div>
+
+
+
+
+
+				</div>
+
+			</div>
+		</div>
+
+	</section>
+</div>
+
+
+
+
+
+
+<script>
+	var base_url = "https://apsche.smartinternz.com/";
+</script>
+<script>
+	var guided_lab = "795";
+</script>
+<script>
+	var BadgeappID = "39542";
+</script>
+<script src="https://apsche.smartinternz.com/assets/bootstrap_tree/js/treeview.js"></script>
+<script src="https://apsche.smartinternz.com/assets/vps/js/student/guided_project_info.js"></script>
+<script>
+	$(function() {
+		$('#shortscreen').hide();
+
+		$('#shortscreen').click(function() {
+			$('#zooms_divs').attr('class', 'box box-default table_box ');
+			$('#fullscreen').show();
+			$('#shortscreen').hide();
+		})
+		$('#fullscreen').click(function() {
+			$('#zooms_divs').attr('class', 'box box-default table_box zoom_badges');
+			$('#fullscreen').hide();
+			$('#shortscreen').show();
+		})
+	})
+</script>
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery UI 1.11.4 -->
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+<!-- Bootstrap 3.3.6 -->
+<script src="https://apsche.smartinternz.com/assets/bootstrap/js/bootstrap.min.js"></script>
+<!-- Morris.js charts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="https://apsche.smartinternz.com/assets/plugins/morris/morris.min.js"></script>
+<!-- Sparkline -->
+<script src="https://apsche.smartinternz.com/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+<!-- jvectormap -->
+<script src="https://apsche.smartinternz.com/assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="https://apsche.smartinternz.com/assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="https://apsche.smartinternz.com/assets/plugins/knob/jquery.knob.js"></script>
+<!-- daterangepicker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+
+<script src="https://apsche.smartinternz.com/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- Slimscroll -->
+<script src="https://apsche.smartinternz.com/assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="https://apsche.smartinternz.com/assets/plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="https://apsche.smartinternz.com/assets/dist/js/app.min.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+
+<!-- AdminLTE for demo purposes -->
+<script src="https://apsche.smartinternz.com/assets/dist/js/demo.js"></script>
+</body>
+</html>
